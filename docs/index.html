@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>  | Documentation</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
+  <link href='assets/github.css' type='text/css' rel='stylesheet' />
+  <link href='assets/split.css' type='text/css' rel='stylesheet' />
+</head>
+<body class='documentation m0'>
+    <div class='flex'>
+      <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'></h3>
+          <div class='mb1'><code></code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#scalediagramjs'
+                  class="">
+                  ScaleDiagram.js
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#scalediagram'
+                  class="">
+                  ScaleDiagram
+                  
+                </a>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div id='split-right' class='relative overflow-auto height-viewport-100'>
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='scalediagramjs'>
+      ScaleDiagram.js
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>This module is used to create scale diagram using SVG <br>
+demo: <a href="../MajorScale.html" target="_blank">MajorScale.html</a></p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>ScaleDiagram.js</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-number">4</span> required parameters:
+    dots = [ [dotsOnSix],[dotsOnFive],[dotsOnFour],[dotsOnThree],[dotsOnTwo],[dotsOnOne] ]; array <span class="hljs-keyword">of</span> arrays <span class="hljs-keyword">of</span> fret locations on the strings <span class="hljs-keyword">from</span> <span class="hljs-number">6</span><span class="hljs-number">-1</span>
+    root = [ [string,fret], [string,fret]...]; string/fret locations <span class="hljs-keyword">of</span> root <span class="hljs-keyword">of</span> the scale
+    nomberOFFrets = number <span class="hljs-keyword">of</span> frets to draw <span class="hljs-keyword">in</span> the diagram
+    id = the id <span class="hljs-keyword">of</span> the span tag to place the diagram
+
+optional parameter
+    offsetFret = [theFret, theNumber]  optional fret number marker (on the side <span class="hljs-keyword">of</span> the diagram)</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='scalediagram'>
+      ScaleDiagram
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>This function creates a SVG scale diagram</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>new ScaleDiagram(dots: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>, root: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>, numberOfFrets: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, id: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, offsetFret: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>dots</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code>
+	    an array of arrays of fret loactions on string from 6 to 1
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>root</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code>
+	    = a two element array - [
+[stringNum, fretLoc]
+,
+[stringNum, fretLoc]
+...]
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>numberOfFrets</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>id</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    the id of the span tag to place the diagram
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>offsetFret</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code>
+	    OPTIONAL 
+[theFret, theNumber]
+ fret number marker (on the side of the diagram)
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// assumes the html page has a span with the id of 'scale0-1'</span>
+<span class="hljs-comment">// CAGED forms - C form</span>
+ScaleDiagram([[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>]],[[<span class="hljs-number">5</span>,<span class="hljs-number">4</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">2</span>]],<span class="hljs-number">6</span>,<span class="hljs-string">"scale0-1"</span>);</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+      </div>
+    </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/split.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>

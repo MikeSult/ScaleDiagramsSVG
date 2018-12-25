@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Mike Sult">
+<title>Major Scales</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<style>
+#container {
+  width: 700px;
+  height: 340px;
+  position: relative;
+  background: white;
+  z-index: 5;
+/*  margin: auto; */
+}
+#Aform {
+  width: 100px;
+  height: 117px;
+  position: relative;
+  z-index: -1;
+}
+#Gform {
+  width: 100px;
+  height: 117px;
+  position: relative;
+  z-index: -2;
+  left: 240;
+}
+#Eform {
+  width: 100px;
+  height: 117px;
+  position: relative;
+  z-index: -3;
+  left: 360;
+}
+#Dform {
+  width: 100px;
+  height: 117px;
+  position: relative;
+  z-index: -4;
+  left: 480;
+}
+
+
+#containerBarre {
+  width: 700px;
+  height: 340px;
+  position: relative;
+  background: white;
+  z-index: 5;
+/*  margin: auto; */
+}
+#ABarreForm {
+  width: 100px;
+  height: 117px;
+  position: relative;
+  z-index: -1;
+}
+#GBarreForm {
+  width: 100px;
+  height: 117px;
+  position: relative;
+  z-index: -2;
+  left: 240;
+}
+#EBarreForm {
+  width: 100px;
+  height: 117px;
+  position: relative;
+  z-index: -3;
+  left: 360;
+}
+#DBarreForm {
+  width: 100px;
+  height: 117px;
+  position: relative;
+  z-index: -4;
+  left: 480;
+}
+
+
+</style>
+
+<link rel="stylesheet" type="text/css" href="ScalesSVG.css">
+
+
+<script src="ScaleDiagram.js"></script>
+<script src="../ChordDiagramsSVG/chordDiagram.js"></script>
+
+<script>
+function connectTheForms() {
+  var ids = ['Aform','Gform','Eform','Dform'];
+  var leftPositions = [120,240,360,480];
+  var topPositions = [40,100,140,200];
+  var finished = false;
+  for(var i=0; i<ids.length; i++) {
+      moveOne(ids[i], leftPositions[i], topPositions[i]);
+	}
+}
+function connectTheBarreForms() {
+  var ids = ['ABarreForm','GBarreForm','EBarreForm','DBarreForm'];
+  var leftPositions = [120,240,360,480];
+  var topPositions = [60,100,160,200];
+  var finished = false;
+  for(var i=0; i<ids.length; i++) {
+      moveOne(ids[i], leftPositions[i], topPositions[i]);
+	}
+}
+
+
+function moveOne(id, startingLeftPos, targetTopPos) {
+  var elem = document.getElementById(id);
+  elem.style.position = 'absolute';
+  var lpos = startingLeftPos;
+  var topTarget = targetTopPos;
+  var destination = 0;
+  var tpos  = 0;
+  var delay = 25;
+  var id = setInterval(frame, delay);
+  function frame() {
+	if (lpos == destination && tpos == topTarget) {
+	  clearInterval(id);
+	} else {
+	  if (lpos != destination)
+	      lpos--;
+	  if (tpos != topTarget)
+	      tpos++;
+	  elem.style.left = lpos + 'px'; 
+	  elem.style.top = tpos + 'px'; 
+	}
+  }
+}
+
+</script>
+
+</head>
+<body>
+<h1>Major Scale</h1>
+<div class="scaleGroup">
+<p>The major scale structure is w w h w w w h (w=whole step, h=half step).  These are the 'CAGED' major scale forms.  While not a complete map of all paths for the major scale they provide a good start.</p>
+<p>
+<span class="col-md-2">C form</span>
+<span class="col-md-2">A form</span>
+<span class="col-md-2">G form</span>
+<span class="col-md-2">E form</span>
+<span class="col-md-4">D form</span>
+</p>
+<p>
+<span id="scale0-1" class="col-md-2"></span>
+<span id="scale0-2" class="col-md-2"></span>
+<span id="scale0-3" class="col-md-2"></span>
+<span id="scale0-4" class="col-md-2"></span>
+<span id="scale0-5" class="col-md-4"></span></p>
+</p>
+<p>
+The naming of the forms comes from the fact the these keys are 'guitar friendly', meaning they contain important chords that use some open strings and are basic chords for the instrument.  Compare the actual C major scale and C chord in open position to the the C form and the C form barre chord:</p>
+<p>
+<span id="CmajorOpen" class="col-md-2"></span>
+<span id="CmajorChord" class="col-md-2"></span>
+<span id="CmajorForm" class="col-md-2"></span>
+<span id="CformBarre" class="col-md-6"></span>
+</p>
+<p>Everything is moved up one fret so that no open strings are used.  It does require a different fingering but it can be moved to different positions on the guitar neck and used in several different keys.  The hand shape of the movable form remains the same but the root of chord and key name will change depending on what fret you are playing the form.  It's important to understand that when using the C form up the neck that you ARE NOT in the key of C (unless you're at the open position or the 12th position).  So in that since sometimes the C A G E D naming convention for these scale can be confusing.  It's merely a NAME for the form but it is not the key you're in.  All of the remaining C A G E D forms also are inspired by their open position namesakes. But the same caveat applies: when you are using an E form up the neck, you are not in the key of E.  You can determine the key by calculating the name for the fret location of the circled notes of the diagram.  For example, if the circled note of the E form diagram on string 6 was moved to the seventh fret, then you have scale of B major.</p>
+<p>The barre chords use the same naming convention: the forms are C A G E D.  These movable major chords are found using the first, third and fifth scale degrees of the scale.  Shown below are the C A G E D barre chords.There interlock on the fretboard as do the scale forms.  Click the 'Connect the Barre forms' button to see how the forms connect.  This will display the notes of a Db major chord all up and down the neck as the different forms move to the correct location to create a Db chord.  If you need to move even higher you simply interlock another C form (12 frets above the first C form) and continue on with addition forms as needed.</p>
+<p>
+<p>
+<button onclick="connectTheBarreForms()">Connect the Barre forms</button>
+</p> 
+
+<div id="containerBarre">
+<span id="CBarreForm"></span>
+<span id="ABarreForm"></span>
+<span id="GBarreForm"></span>
+<span id="EBarreForm"></span>
+<span id="DBarreForm"></span>
+</div>
+
+</p>
+<h2>The Connection of the C A G E D forms</h2>
+<p>The C A G E D scale forms are useful individually but it is important to understand how they interlock on the fretboard.  Once you understand how one connects to the next you'll have an understanding of a major key over the entire fretboard.  Click the 'Connect the forms' button to see how the forms connect (currently lined up in the order of C A G E D).  This example will display a Db major scale (or C# major if you prefer) over the fretboard</p>
+<p>
+<button onclick="connectTheForms()">Connect the forms</button>
+</p> 
+
+<div id="container">
+<span id="Cform"></span>
+<span id="Aform"></span>
+<span id="Gform"></span>
+<span id="Eform"></span>
+<span id="Dform"></span>
+</div>
+
+<p>
+These two forms require a wide hand shape. They have three notes on every string and navigate diagonally across the strings.
+</p>
+<p>
+<span id="scale1-1" class="col-md-4"></span>
+<span id="scale1-2" class="col-md-8"></span>
+
+</p>
+<p>
+The CAGED scale forms can also be used for the modes.  The only difference is where the root is located within that scale shape.  Whatever major scale form you learn, you are also playing a form of all of the modes.  The entire modal system can be played using the same shapes as the basic CAGED major scale forms.  It is nice to know that whenever you learn a major scale form you also are learning 6 others modes that use the same shape.  It's a good way to leverage your existing skills.
+</p>
+<a name="dorian"></a>
+<p>
+Here is the <b>DORIAN</b> mode using the same scale shapes.
+</p>
+<p>
+<span id="scale2-1" class="col-md-2"></span>
+<span id="scale2-2" class="col-md-2"></span>
+<span id="scale2-3" class="col-md-2"></span>
+<span id="scale2-4" class="col-md-2"></span>
+<span id="scale2-5" class="col-md-4"></span></p>
+</p>
+<a name="phrygian"></a>
+<p>
+Here is the <b>PHRYGIAN</b> mode using the same scale shapes.  
+</p>
+<p>
+<span id="scale3-1" class="col-md-2"></span>
+<span id="scale3-2" class="col-md-2"></span>
+<span id="scale3-3" class="col-md-2"></span>
+<span id="scale3-4" class="col-md-2"></span>
+<span id="scale3-5" class="col-md-4"></span></p>
+</p>
+<a name="lydian"></a>
+<p>
+Here is the <b>LYDIAN</b> mode using the same scale shapes.  
+</p>
+<p>
+<span id="scale4-1" class="col-md-2"></span>
+<span id="scale4-2" class="col-md-2"></span>
+<span id="scale4-3" class="col-md-2"></span>
+<span id="scale4-4" class="col-md-2"></span>
+<span id="scale4-5" class="col-md-4"></span></p>
+</p>
+<a name="mixolydian"></a>
+<p>
+Here is the <b>MIXOLYDIAN</b> mode using the same scale shapes.  
+</p>
+<p>
+<span id="scale5-1" class="col-md-2"></span>
+<span id="scale5-2" class="col-md-2"></span>
+<span id="scale5-3" class="col-md-2"></span>
+<span id="scale5-4" class="col-md-2"></span>
+<span id="scale5-5" class="col-md-4"></span></p>
+</p>
+<a name="aeolian"></a>
+<p>
+Here is the <b>AEOLIAN</b> mode using the same scale shapes.  The Aeolian mode is the same structure as the Natural Minor Scale.
+</p>
+<p>
+<span id="scale6-1" class="col-md-2"></span>
+<span id="scale6-2" class="col-md-2"></span>
+<span id="scale6-3" class="col-md-2"></span>
+<span id="scale6-4" class="col-md-2"></span>
+<span id="scale6-5" class="col-md-4"></span></p>
+</p>
+<a name="locrian"></a>
+<p>
+Here is the <b>LOCRIAN</b> mode using the same scale shapes.  
+</p>
+<p>
+<span id="scale7-1" class="col-md-2"></span>
+<span id="scale7-2" class="col-md-2"></span>
+<span id="scale7-3" class="col-md-2"></span>
+<span id="scale7-4" class="col-md-2"></span>
+<span id="scale7-5" class="col-md-4"></span></p>
+</p>
+</div>
+<script>
+// CAGED forms
+ScaleDiagram([[1,2,4],[1,3,4],[1,3,4],[1,3],[1,2,4],[1,2,4]],[[5,4],[2,2]],6,"Cform");
+ScaleDiagram([[2,4],[1,2,4],[1,2,4],[1,3,4],[2,4,5],[2,4]],[[5,2],[3,4]],6,"Aform");
+ScaleDiagram([[1,3,4],[1,3,4],[1,3,5],[1,3],[1,2,4],[1,3,4]],[[6,4],[3,1],[1,4]],6,"Gform");
+ScaleDiagram([[1,2,4],[1,2,4],[1,3,4],[1,3,4],[2,4],[1,2,4]],[[6,2],[4,4],[1,2]],6,"Eform");
+ScaleDiagram([[1,3,4],[1,3,5],[1,3,5],[1,3],[1,3,4],[1,3,4]],[[4,1],[2,4]],6,"Dform");
+
+ScaleDiagram([[0,1,3],[0,2,3],[0,2,3],[0,2],[0,1,3],[0,1,3]],[[5,3],[2,1]],5,"CmajorOpen");
+ChordDiagram([-1,3,2,0,1,0],[5,3],5,"CmajorChord");
+ScaleDiagram([[1,2,4],[1,3,4],[1,3,4],[1,3],[1,2,4],[1,2,4]],[[5,4],[2,2]],6,"CmajorForm");
+ChordDiagram([-1,4,3,1,2,1],[5,4],6,"CformBarre");
+
+// CAGED barre forms
+ChordDiagram([-1,4,3,1,2,1],[5,4],6,"CBarreForm");
+ChordDiagram([-1,1,3,3,3,1],[5,1],6,"ABarreForm");
+ChordDiagram([4,3,1,1,1,4],[6,4],6,"GBarreForm");
+ChordDiagram([1,3,3,2,1,1],[6,1],6,"EBarreForm");
+ChordDiagram([-1,-1,1,3,4,3],[4,1],6,"DBarreForm");
+
+// CAGED forms
+ScaleDiagram([[1,2,4],[1,3,4],[1,3,4],[1,3],[1,2,4],[1,2,4]],[[5,4],[2,2]],6,"scale0-1");
+ScaleDiagram([[2,4],[1,2,4],[1,2,4],[1,3,4],[2,4,5],[2,4]],[[5,2],[3,4]],6,"scale0-2");
+ScaleDiagram([[1,3,4],[1,3,4],[1,3,5],[1,3],[1,2,4],[1,3,4]],[[6,4],[3,1],[1,4]],6,"scale0-3");
+ScaleDiagram([[1,2,4],[1,2,4],[1,3,4],[1,3,4],[2,4],[1,2,4]],[[6,2],[4,4],[1,2]],6,"scale0-4");
+ScaleDiagram([[1,3,4],[1,3,5],[1,3,5],[1,3],[1,3,4],[1,3,4]],[[4,1],[2,4]],6,"scale0-5");
+
+// stretch forms
+ScaleDiagram([[1,3,5],[1,3,5],[2,3,5],[2,3,5],[3,5,6],[3,5,6]],[[6,1],[4,3],[2,6]],8,"scale1-1");
+ScaleDiagram([[1,3,5],[1,3,5],[1,3,5],[2,3,5],[3,4,6],[3,5,6]],[[5,1],[3,3],[1,6]],8,"scale1-2");
+
+// dorian
+ScaleDiagram([[1,2,4],[1,3,4],[1,3,4],[1,3],[1,2,4],[1,2,4]],[[4,1],[2,4]],6,"scale2-1");
+ScaleDiagram([[2,4],[1,2,4],[1,2,4],[1,3,4],[2,4,5],[2,4]],[[5,4],[2,2]],6,"scale2-2");
+ScaleDiagram([[1,3,4],[1,3,4],[1,3,5],[1,3],[1,2,4],[1,3,4]],[[5,1],[3,3]],6,"scale2-3");
+ScaleDiagram([[1,2,4],[1,2,4],[1,3,4],[1,3,4],[2,4],[1,2,4]],[[6,4],[3,1],[1,4]],6,"scale2-4");
+ScaleDiagram([[1,3,4],[1,3,5],[1,3,5],[1,3],[1,3,4],[1,3,4]],[[6,1],[4,3],[1,1]],6,"scale2-5");
+
+// phrygian
+ScaleDiagram([[1,2,4],[1,3,4],[1,3,4],[1,3],[1,2,4],[1,2,4]],[[6,1],[4,3],[1,1]],6,"scale3-1");
+ScaleDiagram([[2,4],[1,2,4],[1,2,4],[1,3,4],[2,4,5],[2,4]],[[4,1],[2,4]],6,"scale3-2");
+ScaleDiagram([[1,3,4],[1,3,4],[1,3,5],[1,3],[1,2,4],[1,3,4]],[[5,3],[2,1]],6,"scale3-3");
+ScaleDiagram([[1,2,4],[1,2,4],[1,3,4],[1,3,4],[2,4],[1,2,4]],[[5,1],[3,3]],6,"scale3-4");
+ScaleDiagram([[1,3,4],[1,3,5],[1,3,5],[1,3],[1,3,4],[1,3,4]],[[6,3],[4,5],[1,3]],6,"scale3-5");
+
+// lydian
+ScaleDiagram([[1,2,4],[1,3,4],[1,3,4],[1,3],[1,2,4],[1,2,4]],[[6,2],[4,4],[1,2]],6,"scale4-1");
+ScaleDiagram([[2,4],[1,2,4],[1,2,4],[1,3,4],[2,4,5],[2,4]],[[4,2],[2,5]],6,"scale4-2");
+ScaleDiagram([[1,3,4],[1,3,4],[1,3,5],[1,3],[1,2,4],[1,3,4]],[[5,4],[2,2]],6,"scale4-3");
+ScaleDiagram([[1,2,4],[1,2,4],[1,3,4],[1,3,4],[2,4],[1,2,4]],[[5,2],[3,4]],6,"scale4-4");
+ScaleDiagram([[1,3,4],[1,3,5],[1,3,5],[1,3],[1,3,4],[1,3,4]],[[6,4],[3,1],[1,4]],6,"scale4-5");
+
+// mixolydian
+ScaleDiagram([[1,2,4],[1,3,4],[1,3,4],[1,3],[1,2,4],[1,2,4]],[[6,4],[3,1],[1,4]],6,"scale5-1");
+ScaleDiagram([[2,4],[1,2,4],[1,2,4],[1,3,4],[2,4,5],[2,4]],[[6,2],[4,4],[1,2]],6,"scale5-2");
+ScaleDiagram([[1,3,4],[1,3,4],[1,3,5],[1,3],[1,2,4],[1,3,4]],[[4,1],[2,4]],6,"scale5-3");
+ScaleDiagram([[1,2,4],[1,2,4],[1,3,4],[1,3,4],[2,4],[1,2,4]],[[5,4],[2,2]],6,"scale5-4");
+ScaleDiagram([[1,3,4],[1,3,5],[1,3,5],[1,3],[1,3,4],[1,3,4]],[[5,1],[3,3]],6,"scale5-5");
+
+// aeolian
+ScaleDiagram([[1,2,4],[1,3,4],[1,3,4],[1,3],[1,2,4],[1,2,4]],[[5,1],[3,3]],6,"scale6-1");
+ScaleDiagram([[2,4],[1,2,4],[1,2,4],[1,3,4],[2,4,5],[2,4]],[[6,4],[3,1],[1,4]],6,"scale6-2");
+ScaleDiagram([[1,3,4],[1,3,4],[1,3,5],[1,3],[1,2,4],[1,3,4]],[[6,1],[4,3],[1,1]],6,"scale6-3");
+ScaleDiagram([[1,2,4],[1,2,4],[1,3,4],[1,3,4],[2,4],[1,2,4]],[[4,1],[2,4]],6,"scale6-4");
+ScaleDiagram([[1,3,4],[1,3,5],[1,3,5],[1,3],[1,3,4],[1,3,4]],[[5,3],[2,1]],6,"scale6-5");
+
+// locrian
+ScaleDiagram([[1,2,4],[1,3,4],[1,3,4],[1,3],[1,2,4],[1,2,4]],[[5,3],[2,1]],6,"scale7-1");
+ScaleDiagram([[2,4],[1,2,4],[1,2,4],[1,3,4],[2,4,5],[2,4]],[[5,1],[3,3]],6,"scale7-2");
+ScaleDiagram([[1,3,4],[1,3,4],[1,3,5],[1,3],[1,2,4],[1,3,4]],[[6,3],[3,1],[1,3]],6,"scale7-3");
+ScaleDiagram([[1,2,4],[1,2,4],[1,3,4],[1,3,4],[2,4],[1,2,4]],[[6,1],[4,3],[1,1]],6,"scale7-4");
+ScaleDiagram([[1,3,4],[1,3,5],[1,3,5],[1,3],[1,3,4],[1,3,4]],[[5,5],[2,3]],6,"scale7-5");
+
+</script>
+
+</body>
+</html>
